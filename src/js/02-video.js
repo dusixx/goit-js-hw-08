@@ -3,9 +3,7 @@ import Player from '@vimeo/player';
 
 const THROTTLE_PERIOD = 1000;
 const CURRENT_TIME_KEY = 'videoplayer-current-time';
-
-const playerRef = document.querySelector('#vimeo-player');
-const player = new Player(playerRef);
+const player = new Player(document.querySelector('#vimeo-player'));
 
 // ставим текущую позицию воспроизведения
 const playerCurrentTime = localStorage.getItem(CURRENT_TIME_KEY);
@@ -15,7 +13,7 @@ player.on(
   'timeupdate',
   throttle(
     // сохраняем текущую позицию воспроизведения
-    data => localStorage.setItem(CURRENT_TIME_KEY, data.seconds),
+    ({ seconds }) => localStorage.setItem(CURRENT_TIME_KEY, seconds),
     THROTTLE_PERIOD
   )
 );
