@@ -32,8 +32,8 @@ export class FormDataStorage {
     }
   }
 
-  clear() {
-    this.target.reset();
+  clear(resetTarget = true) {
+    if (resetTarget) this.target.reset();
     localStorage.removeItem(this.#key);
   }
 
