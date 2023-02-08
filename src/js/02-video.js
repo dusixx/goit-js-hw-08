@@ -4,7 +4,7 @@ import Player from '@vimeo/player';
 const THROTTLE_PERIOD = 1000;
 const CURRENT_TIME_KEY = 'videoplayer-current-time';
 
-// player instance
+// Player instance
 const player = new Player(document.querySelector('#vimeo-player'));
 
 // восстанавливаем текущую позицию воспроизведения
