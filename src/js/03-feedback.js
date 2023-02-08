@@ -5,7 +5,7 @@ const THROTTLE_PERIOD = 500;
 const formData = new FormDataStorage('.feedback-form', 'feedback-form-state');
 const form = formData.target;
 
-// делаем поле email обязательным для заполнения
+// делаем поле email обязательным
 form.email.setAttribute('required', '');
 
 // заполняем форму из хранилища

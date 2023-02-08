@@ -7,12 +7,13 @@ export class FormDataStorage {
   }
 
   get() {
-    const { email, message } = this.target;
-    // если не заполнен email - данные не валидны
+    const email = this.target.email.value.trim();
+    const message = this.target.message.value.trim();
+
     return (
-      email.value && {
-        email: email.value,
-        message: message.value,
+      (email || message) && {
+        email,
+        message,
       }
     );
   }
