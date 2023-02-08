@@ -8,8 +8,7 @@ const CURRENT_TIME_KEY = 'videoplayer-current-time';
 const player = new Player(document.querySelector('#vimeo-player'));
 
 // ставим текущую позицию воспроизведения
-const playerCurrentTime = localStorage.getItem(CURRENT_TIME_KEY);
-player.setCurrentTime(playerCurrentTime || 0);
+player.setCurrentTime(localStorage.getItem(CURRENT_TIME_KEY) || 0);
 
 player.on(
   'timeupdate',
