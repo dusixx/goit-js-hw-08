@@ -27,7 +27,6 @@ export class FormDataStorage {
 
     if (formData) {
       const { email, message } = this.target;
-
       email.value = formData.email;
       message.value = formData.message;
     }
