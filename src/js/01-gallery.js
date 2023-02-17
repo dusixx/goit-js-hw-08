@@ -12,19 +12,19 @@ new SimpleLightbox('.gallery a', {
 
 function createGallery(items, className) {
   const galleryRef = document.querySelector(`.${className}`);
-
   if (!galleryRef) return null;
 
-  const markup = items
-    .map(
-      ({ preview, original, description }) =>
-        `<a class="${className}__item" href="${original}">
+  galleryRef.insertAdjacentHTML(
+    'beforeend',
+    items
+      .map(
+        ({ preview, original, description }) =>
+          `<a class="${className}__item" href="${original}">
             <img class="${className}__image" src="${preview}" alt="${description}" />
         </a>`
-    )
-    .join('');
-
-  galleryRef.insertAdjacentHTML('beforeend', markup);
+      )
+      .join('')
+  );
 
   return galleryRef;
 }
