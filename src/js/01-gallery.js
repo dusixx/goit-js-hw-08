@@ -10,16 +10,11 @@ new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-/**
- * Создает разметку галлереи на основе массива items
- * и вставляет ее в элемент с классом className
- */
 function createGallery(items, className) {
   const galleryRef = document.querySelector(`.${className}`);
 
   if (!galleryRef) return null;
 
-  // создаем разметку
   const markup = items
     .map(
       ({ preview, original, description }) =>
@@ -29,7 +24,6 @@ function createGallery(items, className) {
     )
     .join('');
 
-  // рендерим галлерею
   galleryRef.insertAdjacentHTML('beforeend', markup);
 
   return galleryRef;
